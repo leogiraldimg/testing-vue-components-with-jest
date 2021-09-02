@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { ChatMessageService } from "./services/chatMessageService.js";
+import { ChatMessageService } from "./services/chatMessageService";
 
 export default {
   data() {
