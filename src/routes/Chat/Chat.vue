@@ -6,7 +6,11 @@
 
     <div class="card mb-3">
       <div class="card-body">
-        <div v-for="message in messages" v-bind:key="message.id">
+        <div
+          v-for="message in messages"
+          v-bind:key="message.id"
+          class="message-display"
+        >
           <strong>{{ message.sender }}:</strong>
           <span>{{ message.content }}</span>
         </div>
@@ -38,19 +42,17 @@
 <script>
 export default {
   data() {
-    console.log("This?", this);
-
     return {
-      userMessage: "Where is my order?",
-      messages: this.$attrs.messages || [],
+      userMessage: 'Where is my order?',
+      messages: this.$attrs.messages || []
     };
   },
   methods: {
     handleMessageSubmit(e) {
       e.preventDefault();
-      console.log("Submitted message", this.userMessage);
+      console.log('Submitted message', this.userMessage);
       this.$attrs.handleSubmitChatMessage(this.userMessage);
-    },
-  },
+    }
+  }
 };
 </script>
